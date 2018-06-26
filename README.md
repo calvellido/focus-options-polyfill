@@ -6,6 +6,7 @@ JavaScript polyfill for `focusOptions`, an optional property passed to `HTMLElem
 ## Docs
 
 WHATWG Spec
+
 https://html.spec.whatwg.org/multipage/interaction.html#dom-focusoptions-preventscroll
 
 MDN Web Docs - focus
