@@ -14,7 +14,7 @@ MDN Web Docs - focus
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus
 
 
-## Intents to implement:
+## Intents to implement
 
       
 Chrome Platform Status - Prevent scrolling in HTMLElement.focus()
