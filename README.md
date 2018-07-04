@@ -1,4 +1,4 @@
-# focusOptions-polyfill
+# focus-options-polyfill
 
 JavaScript polyfill for `focusOptions`, an optional property passed to `HTMLElement.focus()` that contains the `preventScroll` boolean, which controls whether the browser should prevent a focused element from being scrolled into view.
 
