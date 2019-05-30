@@ -1,7 +1,7 @@
 // focus - focusOptions - preventScroll polyfill
 var supportsPreventScrollOption = false;
 try {
-  var focusElem = createElement('div');
+  var focusElem = document.createElement('div');
   focusElem.addEventListener('focus', function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -21,7 +21,7 @@ if (HTMLElement.prototype.nativeFocus === undefined && !supportsPreventScrollOpt
   var patchedFocus = function (args) {
     var actualPosition = window.scrollY;
     this.nativeFocus();
-    if (args.preventScroll) {
+    if (args && args.preventScroll) {
       // Hijacking the event loop order, since the focus() will trigger
       // internally an scroll that goes to the event loop
       setTimeout(function() {
