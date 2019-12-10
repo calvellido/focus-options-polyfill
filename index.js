@@ -19,13 +19,13 @@ if (HTMLElement.prototype.nativeFocus === undefined && !supportsPreventScrollOpt
   HTMLElement.prototype.nativeFocus = HTMLElement.prototype.focus;
 
   var patchedFocus = function (args) {
-    var actualPosition = window.scrollY;
+    var actualPosition = window.scrollY || window.pageYOffset;
     this.nativeFocus();
     if (args && args.preventScroll) {
       // Hijacking the event loop order, since the focus() will trigger
       // internally an scroll that goes to the event loop
       setTimeout(function() {
-        window.scroll(window.scrollX, actualPosition);
+        window.scroll((window.scrollX || window.pageXOffset), actualPosition);
       }, 0);
     }
   }
