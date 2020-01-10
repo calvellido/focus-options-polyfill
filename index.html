@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>focus-options-polyfill</title>
+
+	<script src="./index.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<h1>focus-options-polyfill</h1>
+	</header>
+	<article>
+
+		<button type="button" onclick="focusScrollMethod()">
+			Click me to focus on the button!
+		</button>
+		<button type="button" onclick="focusNoScrollMethod()">
+			Click me to focus on the button without scrolling!
+		</button>
+
+		<div id="container" style="height: 2000px;">
+			<button type="button" id="focusable-button" style="margin-top: 1500px;">Click Me!</button>
+		</div>
+
+	</article>
+
+	<footer>
+		<p>
+			<small>Created by @calvellido</small>
+		</p>
+	</footer>
+
+	<script>
+		focusScrollMethod = function getFocus() {
+			document.getElementById("focusable-button").focus({ preventScroll: false });
+		}
+
+		focusNoScrollMethod = function getFocusWithoutScrolling() {
+			document.getElementById("focusable-button").focus({ preventScroll: true });
+		}
+
+		document.getElementById("focusable-button").addEventListener("click", function() {
+			alert("Button clicked!")
+		});
+	</script>
+
+</body>
+</html>
