@@ -6,7 +6,6 @@ try {
     event.preventDefault();
     event.stopPropagation();
   }, true);
-  // document.documentElement.focus(
   focusElem.focus(
     Object.defineProperty({}, 'preventScroll', { get: function () {
       supportsPreventScrollOption = true;
