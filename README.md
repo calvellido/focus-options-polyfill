@@ -1,5 +1,7 @@
 # focus-options-polyfill
 
+[![npm version](http://img.shields.io/npm/v/focus-options-polyfill.svg?label=npm%20package&style=flat-square&logo=npm&logoWidth=20)](https://npmjs.com/package/focus-options-polyfill "View this project on npm")
+
 JavaScript polyfill for `focusOptions`, an optional property passed to `HTMLElement.focus()` that contains the `preventScroll` boolean, which controls whether the browser should prevent a focused element from being scrolled into view.
 
 
