@@ -34,15 +34,45 @@
   ) {
     HTMLElement.prototype.nativeFocus = HTMLElement.prototype.focus;
 
+    var calcScrollableElements = function(element) {
+      var parent = element.parentNode;
+      var scrollableElements = [];
+
+      while (parent && parent !== document.scrollingElement) {
+        if (
+          parent.offsetHeight < parent.scrollHeight ||
+          parent.offsetWidth < parent.scrollWidth
+        ) {
+          scrollableElements.push([
+            parent,
+            parent.scrollTop,
+            parent.scrollLeft
+          ]);
+        }
+        parent = parent.parentNode;
+      }
+      parent = document.scrollingElement;
+      scrollableElements.push([parent, parent.scrollTop, parent.scrollLeft]);
+
+      return scrollableElements;
+    };
+
+    var restoreScrollPosition = function(scrollableElements) {
+      for (var i = 0; i < scrollableElements.length; i++) {
+        scrollableElements[i][0].scrollTop = scrollableElements[i][1];
+        scrollableElements[i][0].scrollLeft = scrollableElements[i][2];
+      }
+      scrollableElements = [];
+    };
+
     var patchedFocus = function(args) {
-      var actualPosition = window.scrollY || window.pageYOffset;
-      this.nativeFocus();
       if (args && args.preventScroll) {
-        // Hijacking the event loop order, since the focus() will trigger
-        // internally an scroll that goes to the event loop
-        setTimeout(function() {
-          window.scroll(window.scrollX || window.pageXOffset, actualPosition);
-        }, 0);
+        var evScrollableElements = calcScrollableElements(this);
+        this.nativeFocus();
+        restoreScrollPosition(evScrollableElements);
+      }
+      else {
+        this.nativeFocus();
       }
     };
 
