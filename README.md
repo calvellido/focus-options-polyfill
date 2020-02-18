@@ -48,7 +48,7 @@ This could suffice in basic cases, but if you need wider and/or specific support
 
 * https://github.com/mathiasbynens/document.scrollingElement
 
-Also, to overcome its absence if you are executing this polyfill through [`jsdom`](https://github.com/jsdom/jsdom), you should place this in your setup:
+Also, to overcome its absence if you are executing this polyfill through [`jsdom`](https://github.com/jsdom/jsdom), you could place this in your setup:
 
 ```js
 document.scrollingElement = document.documentElement
