@@ -37,8 +37,10 @@
     var calcScrollableElements = function(element) {
       var parent = element.parentNode;
       var scrollableElements = [];
+      var rootScrollingElement =
+        document.scrollingElement || document.documentElement;
 
-      while (parent && parent !== document.scrollingElement) {
+      while (parent && parent !== rootScrollingElement) {
         if (
           parent.offsetHeight < parent.scrollHeight ||
           parent.offsetWidth < parent.scrollWidth
@@ -51,7 +53,7 @@
         }
         parent = parent.parentNode;
       }
-      parent = document.scrollingElement;
+      parent = rootScrollingElement;
       scrollableElements.push([parent, parent.scrollTop, parent.scrollLeft]);
 
       return scrollableElements;
