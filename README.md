@@ -40,6 +40,28 @@ https://caniuse.com/#feat=mdn-api_htmlelement_focus_preventscroll_option
   https://bugs.webkit.org/show_bug.cgi?id=178583
 
 
+## document.scrollingElement
+
+This polyfill uses a basic fallback for the [document.scrollingElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement) property, using `document.documentElement` when not found.
+
+This could suffice in basic cases, but if you need wider and/or specific support you should refer to a polyfill for it:
+
+* https://github.com/mathiasbynens/document.scrollingElement
+*
+
+Also, to overcome its absence if you are executing this polyfill through [`jsdom`](https://github.com/jsdom/jsdom), you should place this in your setup:
+
+```js
+document.scrollingElement = document.documentElement
+```
+
+More context about this property can be found in:
+
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
+
+
 ## Dev and testing
 
 To check this polyfill you can do:
