@@ -47,7 +47,6 @@ This polyfill uses a basic fallback for the [document.scrollingElement](https://
 This could suffice in basic cases, but if you need wider and/or specific support you should refer to a polyfill for it:
 
 * https://github.com/mathiasbynens/document.scrollingElement
-*
 
 Also, to overcome its absence if you are executing this polyfill through [`jsdom`](https://github.com/jsdom/jsdom), you should place this in your setup:
 
