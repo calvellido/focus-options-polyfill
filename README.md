@@ -42,9 +42,7 @@ https://caniuse.com/#feat=mdn-api_htmlelement_focus_preventscroll_option
 
 ## document.scrollingElement
 
-This polyfill uses a basic fallback for the [document.scrollingElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement) property, using `document.documentElement` when not found.
-
-This could suffice in basic cases, but if you need wider and/or specific support you should refer to a polyfill for it:
+This polyfill uses a basic fallback for the [document.scrollingElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement) property, using `document.documentElement` when not found. This could suffice in basic cases, but if you need wider and/or specific support you should refer to a polyfill for it:
 
 * https://github.com/mathiasbynens/document.scrollingElement
 
