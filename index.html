@@ -8,6 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
 	<title>focus-options-polyfill</title>
 
 	<script src="./index.js"></script>
@@ -26,9 +27,21 @@
 		<button type="button" onclick="focusNoScrollMethod('focusable-button-1')">
 			Click me to focus on the button 1 without scrolling
 		</button>
+		
+		<div>
+			<button type="button" onclick="focusScrollMethod('focusable-input-1')">
+				Click me to focus on the input 4
+			</button>
+			<button type="button" onclick="focusNoScrollMethod('focusable-input-1')">
+				Click me to focus on the input 4 without scrolling
+			</button>
+		</div>
 
 		<div class="container">
 			<button type="button" id="focusable-button-1" style="margin-top: 1500px;">Button 1</button>
+
+			<!-- The font size needs to be over 16px to stop zooming on iOS -->
+			<input type="text" id="focusable-input-1" style="margin-top: 1500px; font-size: 24px;">
 		</div>
 
 	</article>

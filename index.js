@@ -71,7 +71,13 @@
       if (args && args.preventScroll) {
         var evScrollableElements = calcScrollableElements(this);
         this.nativeFocus();
-        restoreScrollPosition(evScrollableElements);
+        if (typeof setTimeout === 'function') {
+          setTimeout(function () {
+            restoreScrollPosition(evScrollableElements);
+          }, 0);
+        } else {
+          restoreScrollPosition(evScrollableElements);          
+        }
       }
       else {
         this.nativeFocus();
