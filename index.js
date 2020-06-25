@@ -74,7 +74,7 @@
         if (typeof setTimeout === 'function') {
           setTimeout(function () {
             restoreScrollPosition(evScrollableElements);
-          }, 100);
+          }, 0);
         } else {
           restoreScrollPosition(evScrollableElements);          
         }
