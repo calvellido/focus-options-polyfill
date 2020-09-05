@@ -29,7 +29,7 @@ https://caniuse.com/#feat=mdn-api_htmlelement_focus_preventscroll_option
 
 * Edge: Issue 14314565 - Enable ability to prevent scrolling in Element.focus()
 
-  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14314565/
+  https://web.archive.org/web/20190401133643/https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14314565/
 
 * Firefox: Bug 1374045 - Consider adding support for customizing scrolling behavior with Element.focus
 

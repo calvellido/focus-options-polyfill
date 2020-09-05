@@ -22,6 +22,15 @@
     focusElem.focus(
       Object.defineProperty({}, "preventScroll", {
         get: function() {
+          // Edge v18 gives a false positive for supporting inputs
+          if (
+            navigator &&
+            typeof navigator.userAgent !== 'undefined' &&
+            navigator.userAgent &&
+            navigator.userAgent.match(/Edge\/1[7-8]/)) {
+              return supportsPreventScrollOption = false
+          }
+
           supportsPreventScrollOption = true;
         }
       })
