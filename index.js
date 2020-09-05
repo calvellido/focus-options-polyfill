@@ -79,13 +79,15 @@
     var patchedFocus = function(args) {
       if (args && args.preventScroll) {
         var evScrollableElements = calcScrollableElements(this);
-        this.nativeFocus();
         if (typeof setTimeout === 'function') {
+          var thisElem = this;
           setTimeout(function () {
+            thisElem.nativeFocus();
             restoreScrollPosition(evScrollableElements);
           }, 0);
         } else {
-          restoreScrollPosition(evScrollableElements);          
+          this.nativeFocus();
+          restoreScrollPosition(evScrollableElements);
         }
       }
       else {
