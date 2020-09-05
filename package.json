@@ -1,6 +1,6 @@
 {
   "name": "focus-options-polyfill",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "JavaScript polyfill for the WHATWG spec of focusOptions, that enables a set of options to be passed to the focus method.",
   "main": "index.js",
   "scripts": {
